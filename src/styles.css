@@ -1,0 +1,18 @@
+* 
+body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(36, 52, 122);
+    height: 100vh;
+    font-family: sans-serif;
+    text-align: center;
+   
+  }
+  

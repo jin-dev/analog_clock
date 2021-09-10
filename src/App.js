@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useRef, useState } from "react";
+import { Clock } from "./components/clock";
+import styled from 'styled-components';
+import "./styles.css";
 
-function App() {
+export default function App() {
+  const containerRef = useRef(null);
+  const [dimens, setDimens] = useState({ w: 0, h: 0 });
+
+  const viewBox = [0, 0, dimens.w, dimens.h].join(" ");
+
+
+  
+  useEffect(() => {
+    setDimens({
+      w: containerRef.current.getBoundingClientRect().width,
+      h: containerRef.current.getBoundingClientRect().height
+    });
+  }, [containerRef]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" ref={containerRef}>
+      <Clock dimens={dimens} viewBox={viewBox}/>
+      <HoverText>Hello There</HoverText>
     </div>
   );
 }
 
-export default App;
+
+
+const HoverText = styled.h1`
+  diplay: flex;
+  flex-direction: row-reverse;
+  position:absolute;
+	color: #fff;
+	&:hover {
+		color: #ed1212;
+		cursor: pointer;
+	}
+`
