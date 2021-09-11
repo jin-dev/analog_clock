@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Markings } from "./markings";
+import { Base } from "./base";
 import { Second } from "./second";
 import { Hour } from "./hour";
 import { Minute } from "./minute";
@@ -13,17 +13,14 @@ export const Clock = ({ dimens, viewBox }) => {
   return (
    
     <Container>
-      <Markings />
-    
       <Store>
-    
         <svg viewBox={viewBox} width={dimens.w} height={dimens.h}>
           <Hour dimens={dimens} viewBox={viewBox} />
           <Minute dimens={dimens} viewBox={viewBox} />
           <Second dimens={dimens} viewBox={viewBox} />
         </svg>
+        <Base />
         <ClockInfo/>
-    
         </Store>   
     </Container>
   

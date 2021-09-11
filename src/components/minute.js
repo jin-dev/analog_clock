@@ -7,8 +7,8 @@ import { useStore } from "../Context/Store";
 export const Minute = ({ dimens }) => {
   const { state, dispatch } = useStore();
   const [minutes, setMinutes] = useState(state.m);
-  const cx = dimens.w / 2 || 0;
-  const cy = dimens.h / 2 || 0;
+  const tx = dimens.w / 2 || 0;
+  const ty = dimens.h / 2 || 0;
 
   useEffect(() => {
 
@@ -19,11 +19,11 @@ export const Minute = ({ dimens }) => {
   }, [state.m]);
 
   return (
-    <Dial
-      x1={cx}
-      y1={cy}
-      x2={cx}
-      y2={cy - RADIUS + 30}
+    <Min
+      x1={tx}
+      y1={ty}
+      x2={tx}
+      y2={ty - RADIUS - 80}
       angle={minutes}
       stroke="#fff"
       strokeWidth="8"
@@ -32,10 +32,9 @@ export const Minute = ({ dimens }) => {
   );
 };
 
-const Dial = styled.line`
+const Min = styled.line`
   position: absolute;
   transform: rotateZ(${(p) => `${p.angle}deg`});
   background: #fff;
   transform-origin: center;
- 
 `;

@@ -10,8 +10,8 @@ export const Second = ({ dimens }) => {
   const { dispatch } = useStore();
   const [seconds, setSeconds] = useState(0);
   const ticker = useTicker();
-  const cx = dimens.w / 2 || 0;
-  const cy = dimens.h / 2 || 0;
+  const tx = dimens.w / 2 || 0;
+  const ty = dimens.h / 2 || 0;
 
   useEffect(() => {
     setSeconds(() => ticker * 6);
@@ -23,11 +23,11 @@ export const Second = ({ dimens }) => {
 
   return (
     <>
-      <Dial
-        x1={cx}
-        y1={cy}
-        x2={cx}
-        y2={cy - RADIUS + 10}
+      <Sec
+        x1={tx}
+        y1={ty}
+        x2={tx}
+        y2={ty - RADIUS - 120}
         angle={seconds}
         stroke="#b20238"
         strokeWidth="3"
@@ -37,10 +37,9 @@ export const Second = ({ dimens }) => {
   );
 };
 
-const Dial = styled.line`
+const Sec = styled.line`
   position: absolute;
   transform: rotateZ(${(p) => `${p.angle}deg`});
   background: #fff;
   transform-origin: center;
-  
 `;

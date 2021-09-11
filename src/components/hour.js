@@ -5,21 +5,21 @@ import { useStore } from "../Context/Store";
 
 export const Hour = ({ dimens }) => {
   const { state } = useStore();
-  const [hour, setHour] = useState(state.h);
-  const cx = dimens.w / 2 || 0;
-  const cy = dimens.h / 2 || 0;
+  const [hours, setHours] = useState(state.h);
+  const tx = dimens.w / 2 || 0;
+  const ty = dimens.h / 2 || 0;
 
   useEffect(() => {
-    setHour(state.h * 30);
+    setHours(state.h * 30);
   }, [state.h]);
   return (
     <>
-      <Dial
-        x1={cx}
-        y1={cy}
-        x2={cx}
-        y2={cy - RADIUS + 80}
-        angle={hour}
+      <Hr
+        x1={tx}
+        y1={ty}
+        x2={tx}
+        y2={ty - RADIUS - 10}
+        angle={hours}
         stroke="#fff"
         strokeWidth="15"
         strokeLinecap="round"
@@ -28,7 +28,7 @@ export const Hour = ({ dimens }) => {
   );
 };
 
-const Dial = styled.line`
+const Hr = styled.line`
   position: absolute;
   transform: rotateZ(${(p) => `${p.angle}deg`});
   background: #fff;
