@@ -21,7 +21,7 @@ export default function App() {
   return (
     <div className="App" ref={containerRef}>
       <Clock dimens={dimens} viewBox={viewBox}/>
-      <HoverText>Hello There</HoverText>
+      <HoverText >Hello Adriel</HoverText>
     </div>
   );
 }
@@ -29,12 +29,10 @@ export default function App() {
 
 
 const HoverText = styled.h1`
-  diplay: flex;
-  flex-direction: row-reverse;
   position:absolute;
 	color: #fff;
 	&:hover {
-		color: #ed1212;
+		color: 	#25e698;
 		cursor: pointer;
 	}
 `

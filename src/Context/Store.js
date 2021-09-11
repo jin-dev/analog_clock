@@ -5,7 +5,7 @@ const initialState = {
   m: new Date().getMinutes(),
   h: new Date().getHours()
 };
-export const useEmitter = () => useContext(Context);
+export const useStore = () => useContext(Context);
 
 function reducer(state, action) {
   switch (action.type) {

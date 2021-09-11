@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { RADIUS } from "../constants";
-import { useEmitter } from "../Context/Emitter";
+import { useStore } from "../Context/Store";
 
 export const Hour = ({ dimens }) => {
-  const { state } = useEmitter();
+  const { state } = useStore();
   const [hour, setHour] = useState(state.h);
   const cx = dimens.w / 2 || 0;
   const cy = dimens.h / 2 || 0;

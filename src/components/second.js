@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { RADIUS } from "../constants";
-import { useEmitter } from "../Context/Emitter";
+import { useStore } from "../Context/Store";
 import { useTicker } from "../hooks/useTicker";
 
 
 
 export const Second = ({ dimens }) => {
-  const { dispatch } = useEmitter();
+  const { dispatch } = useStore();
   const [seconds, setSeconds] = useState(0);
-  const ticks = useTicker();
+  const ticker = useTicker();
   const cx = dimens.w / 2 || 0;
   const cy = dimens.h / 2 || 0;
 
   useEffect(() => {
-    setSeconds(() => ticks * 6);
+    setSeconds(() => ticker * 6);
   
     if (seconds === 354) {
-   
       dispatch({ type: "seconds" });
     }
-  }, [ticks]);
+  }, [ticker]);
 
   return (
     <>
