@@ -1,4 +1,10 @@
 
+
+## DESCRIPTION
+
++ Tech Stack : React hooks + Context API + Styled-components
++ Simple analog clock that runs on React.js
+
 ## HOW TO RUN
 
 1. run 'yarn' for installation
