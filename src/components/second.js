@@ -5,6 +5,7 @@ import { useStore } from "../Context/Store";
 import { useTicker } from "../hooks/useTicker";
 
 
+//A Component for Seconds
 
 export const Second = ({ dimens }) => {
   const { dispatch } = useStore();

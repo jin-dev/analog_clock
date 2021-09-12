@@ -2,6 +2,9 @@ import { Fragment } from "react";
 import styled, { css } from "styled-components";
 import { RADIUS } from "../constants";
 
+
+//Displays clock diameter 
+
 export const Base = () => {
   const dots = [0, 30, 60, 90].map((deg) => {
     const x = Math.floor(RADIUS * Math.cos((deg * Math.PI) / 180));

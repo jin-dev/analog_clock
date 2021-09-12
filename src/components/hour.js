@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { RADIUS } from "../constants";
 import { useStore } from "../Context/Store";
 
+//A Component for Hours
+
 export const Hour = ({ dimens }) => {
   const { state } = useStore();
   const [hours, setHours] = useState(state.h);

@@ -1,5 +1,8 @@
 import { createContext, useContext, useReducer } from "react";
 
+
+//Global State management
+
 const Context = createContext({});
 const initialState = {
   m: new Date().getMinutes(),

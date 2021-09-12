@@ -8,6 +8,8 @@ import { ClockInfo } from "./clockInfo"
 import Store from "../Context/Store";
 
 
+//Clock components
+
 export const Clock = ({ dimens, viewBox }) => {
 
   return (

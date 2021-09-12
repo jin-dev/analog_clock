@@ -4,6 +4,10 @@ import { useStore } from "../Context/Store";
 import { useState } from "react";
 import MouseTooltip from 'react-sticky-mouse-tooltip';
 
+
+//Tooltip that displays current Time
+//Visible depends on mouse movement
+
 export const ClockInfo = () => {
 
         const { state } = useStore();

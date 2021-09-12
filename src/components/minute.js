@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { RADIUS } from "../constants";
 import { useStore } from "../Context/Store";
 
+//A Component for Minute
 
 export const Minute = ({ dimens }) => {
   const { state, dispatch } = useStore();
